@@ -1,0 +1,14 @@
+---
+- hosts: all
+  become: yes
+  tasks:
+    - name: This task to instal webserver
+      yum:
+        name: wget
+        state: latest
+      yum: 
+        name: curl
+        state: latest
+      yum:
+        name: git
+        state: latest
