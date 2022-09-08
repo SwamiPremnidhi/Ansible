@@ -6,9 +6,13 @@
       yum:
         name: wget
         state: latest
-      yum: 
+      yum:
         name: curl
         state: latest
       yum:
         name: git
         state: latest
+    - name: Cron job
+      ansible.builtin.cron:
+        name: "a job for schedule"
+        job: "/home/prem/test.sh" 

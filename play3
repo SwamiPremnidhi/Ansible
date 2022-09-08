@@ -1,0 +1,20 @@
+- hosts: all
+  vars:
+    mypkg:
+      - httpd
+      - git
+      - curl
+      - wget
+  tasks:
+    - yum:
+       name: "{{mypkg}}"
+       state: latest
+    - copy:
+        src: /root/test.sh
+        dest: /tmp
+    - service:
+        name: httpd
+        state: started
+
+    - shell:
+      cmd: sh /root/test.sh
