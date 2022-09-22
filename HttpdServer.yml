@@ -1,0 +1,21 @@
+- hosts: localhost
+  connection: localhost
+  vars:
+   package_name: httpd
+   service_name: httpd
+  tasks:
+   - name: install httpd
+     become: true
+     yum:
+      name: "{{ package_name }}"
+      state: present
+   - name: copy sc
+     become: true
+     copy:
+      src: "/sc/"
+      dest: "/var/www/html/"
+
+   - name: Start service httpd, if not started
+     ansible.builtin.service:
+      name: httpd
+      state: started
