@@ -1,0 +1,5 @@
+name: copy file
+copy: 
+ src: web.html
+ dest: /var/www/html/web.html
+ 

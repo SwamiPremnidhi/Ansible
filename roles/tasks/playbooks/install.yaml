@@ -1,0 +1,5 @@
+- name: install httpd
+  become: true
+  yum:
+   name: "{{ package_name }}"
+   state: present

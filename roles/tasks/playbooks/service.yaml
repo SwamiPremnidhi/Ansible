@@ -1,0 +1,5 @@
+- name: start service
+  become: true
+  service:
+   name: httpd
+   state: "{{ service_name }}"
